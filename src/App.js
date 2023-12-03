@@ -68,8 +68,8 @@ const styles = {
 };
 
 function App() {
-  return (
-    <div className="App" style={styles.app}>
+  return (    
+    <div className="App" style={styles.app}>      
       {/* Add SEO meta tags using react-helmet */}
       <Helmet>
         <title>Equestrian Volunteer Scheduler</title>

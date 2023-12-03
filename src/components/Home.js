@@ -1,5 +1,24 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import ReactPixel from 'react-facebook-pixel';
+import ReactGA from 'react-ga'
+ReactGA.initialize('G-P1RXRKKWZQ');
+ReactGA.pageview(window.location.pathname + window.location.search);
+// ReactGA.pageview(window.location.pathname + window.location.search);
+
+
+ReactPixel.init('1486163205287134');
+ReactPixel.pageView();
+
+ReactPixel.trackCustom('ViewContent', {
+    content_name: 'Home Page View',
+    content_category: 'Home Page',
+    content_ids: ['1234'],
+    content_type: 'page',
+    value: 0.0,
+    currency: 'USD'
+    }
+);
 
 // Define the styles for the component
 const styles = {
@@ -31,9 +50,26 @@ const styles = {
   },
 };
 
+const trackTellMeMore = () => {
+    ReactGA.event({
+        category: 'Button',
+        action: 'Tell Me More Clicked',
+        label: 'Tell Me More Button',
+    });
+    ReactPixel.trackCustom('TellMeMore', {
+        content_name: 'Tell Me More Button Clicked',
+        content_category: 'Tell Me More Button',
+        content_ids: ['1234'],
+        content_type: 'button',
+        value: 0.0,
+        currency: 'USD'
+        }
+    );
+    }    
+
 function Home() {
-  return (
-    <div className="Home" style={styles.home}>
+  return (    
+    <div className="Home" style={styles.home}>       
       {/* Add a title and a subtitle for the component */}
       <h1 className="title" style={styles.title}>
         Welcome to Equestrian Volunteer Scheduler
@@ -73,6 +109,26 @@ function Home() {
         equine program that offers traditional and adaptive riding lessons,
         equine therapy, and hippotherapy to people of all ages and abilities.
       </p>
+      {
+        // Add a tell me more button that links to the About page
+      }
+        <a
+            href="/about"
+            onClick={trackTellMeMore}
+            style={{
+            textDecoration: 'none',
+            backgroundColor: '#f50057',
+            color: 'white',
+            padding: '8px',
+            borderRadius: '4px',
+            '&:hover': {
+                backgroundColor: '#ff5983',
+            },
+            }}
+        >
+            Tell Me More
+        </a>
+
       <p className="paragraph" style={styles.paragraph}>
         The Barn's challenge was to manage their volunteer program more
         efficiently and effectively. The Barn relies on the generosity and

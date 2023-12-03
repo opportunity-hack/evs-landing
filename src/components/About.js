@@ -1,6 +1,21 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import ReactGA from 'react-ga'
+import ReactPixel from 'react-facebook-pixel';
+ReactGA.initialize('G-P1RXRKKWZQ');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
+ReactPixel.init('1486163205287134');
+ReactPixel.pageView();
+ReactPixel.trackCustom('ViewContent', {
+    content_name: 'About Page View',
+    content_category: 'About Page',
+    content_ids: ['1235'],
+    content_type: 'page',
+    value: 0.0,
+    currency: 'USD'
+    }
+);
 // Define the styles for the component
 const styles = {
   about: {
@@ -30,6 +45,7 @@ const styles = {
     borderRadius: '8px',
   },
 };
+
 
 function About() {
   return (
