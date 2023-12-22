@@ -100,10 +100,10 @@ function Home() {
           content="Equestrian Volunteer Scheduler is a software application built for The Barn at Tumbling T Ranch by Opportunity Hack."
         />
       </Helmet>
-      {/* Add an image of Opportunity Hack logo */}      
+      
       {/* Add some paragraphs with information about Opportunity Hack and the application */}
       <p className="paragraph" style={styles.paragraph}>
-        Opportunity Hack is a global community of volunteers who use their
+        <a href="https://ohack.dev">Opportunity Hack</a> is a global community of volunteers who use their
         skills and passion to create positive social impact. Opportunity Hack
         organizes hackathons, workshops, and mentorship programs to empower
         non-profit organizations and social enterprises with innovative
@@ -113,7 +113,7 @@ function Home() {
         src="https://i.imgur.com/Ih0mbYx.png"
         alt="Opportunity Hack logo"
         className="image"
-        style={styles.image}
+        width={400}        
       />
       <p className="paragraph" style={styles.paragraph}>
         Equestrian Volunteer Scheduler is one of the projects that was developed
@@ -131,9 +131,13 @@ function Home() {
             onClick={trackTellMeMore}
             style={{
             textDecoration: 'none',
-            backgroundColor: '#f50057',
+            backgroundColor: '#5cad00',
             color: 'white',
-            padding: '8px',
+            padding: '10px',
+            fontSize: '20px',
+            width: '150px',
+            textAlign: 'center',
+            
             borderRadius: '4px',
             '&:hover': {
                 backgroundColor: '#ff5983',
@@ -143,7 +147,9 @@ function Home() {
             Tell Me More
         </a>
 
+      
       <p className="paragraph" style={styles.paragraph}>
+        <h2>Improving the Volunteer Management System</h2>
         The Barn's challenge was to manage their volunteer program more
         efficiently and effectively. The Barn relies on the generosity and
         dedication of its volunteers, who assist with various tasks such as
@@ -153,6 +159,7 @@ function Home() {
         such as phone calls, emails, spreadsheets, and paper forms .
       </p>
       <p className="paragraph" style={styles.paragraph}>
+        <h2>Equestrian Volunteer Scheduler: A Software Solution for The Barn’s Volunteer Program</h2>
         The team's solution was to create Equestrian Volunteer Scheduler, a
         software application that allows volunteers to create their own
         profiles, view their schedules, sign up for open shifts, receive
@@ -164,6 +171,7 @@ function Home() {
         volunteer program.
       </p>
       <p className="paragraph" style={styles.paragraph}>
+        <h2>How It Works</h2>
         Equestrian Volunteer Scheduler is built using React, a popular
         JavaScript library for building user interfaces. It also uses
         react-helmet, a library that helps manage the document head of the React

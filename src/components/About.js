@@ -64,6 +64,10 @@ function About() {
           name="description"
           content="Learn more about The Barn at Tumbling T Ranch and their volunteer program."
         />
+        <meta
+          name="keywords"
+          content="equestrian, volunteer, scheduler, software, application, barn, tumbling, ranch, girard, training, stables, equine, therapy, riding, lessons, hippotherapy, adaptive"
+        />
       </Helmet>      
       {/* Add some paragraphs with information about The Barn and their volunteer program */}
       <p className="paragraph" style={styles.paragraph}>

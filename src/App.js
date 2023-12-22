@@ -93,6 +93,13 @@ function App() {
           </a>
           <a href="/about" style={styles.link}>
             About
+          </a>
+          🐴
+          <a href="https://staging.trottrack.org" style={styles.link}>
+            Staging
+          </a>
+          <a href="https://thebarn.trottrack.org" style={styles.link}>
+            Production
           </a>          
         </nav>
       </header>
@@ -120,9 +127,7 @@ function App() {
       {/* Add a footer with a disclaimer */}
       <footer style={styles.footer}>
         <p>
-          This is a demo app for educational purposes only. It is not affiliated
-          with or endorsed by The Barn at Tumbling T Ranch (formerly Girard
-          Training Stables).
+          This application was built by volunteer software engineers at <a href="https://ohack.org">Opportunity Hack</a>, coding for social good.          
         </p>
       </footer>
     </div>
