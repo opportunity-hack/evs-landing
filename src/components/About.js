@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import ReactGA from 'react-ga'
+import ReactGA from "react-ga4";
 import ReactPixel from 'react-facebook-pixel';
 ReactGA.initialize('G-P1RXRKKWZQ');
-ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
 
 ReactPixel.init('1486163205287134');
 ReactPixel.pageView();

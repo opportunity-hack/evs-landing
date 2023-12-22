@@ -1,14 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import ReactPixel from 'react-facebook-pixel';
-import ReactGA from 'react-ga'
+import ReactGA from "react-ga4";
+import { TextField, Button, Typography } from '@mui/material';
+// Load from .env file for this React app
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_API;
+
 ReactGA.initialize('G-P1RXRKKWZQ');
-ReactGA.pageview(window.location.pathname + window.location.search);
-// ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
 
-
-ReactPixel.init('1486163205287134');
-ReactPixel.pageView();
 
 ReactPixel.trackCustom('ViewContent', {
     content_name: 'Home Page View',
@@ -50,12 +51,25 @@ const styles = {
   },
 };
 
-const trackTellMeMore = () => {
+const trackTellMeMore = () => {            
+    // Call POST localhost:3001/api when the button is clicked
+    fetch(BACKEND_URL, {
+        method: 'POST',
+    })
+        .then((response) => response.json())
+        .then((data) => {
+        console.log(data);
+        })
+        .catch((error) => {
+        console.error(error);
+        });
+    
     ReactGA.event({
         category: 'Button',
         action: 'Tell Me More Clicked',
         label: 'Tell Me More Button',
     });
+    
     ReactPixel.trackCustom('TellMeMore', {
         content_name: 'Tell Me More Button Clicked',
         content_category: 'Tell Me More Button',
