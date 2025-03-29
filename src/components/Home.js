@@ -109,12 +109,45 @@ function Home() {
         non-profit organizations and social enterprises with innovative
         solutions that address their challenges and opportunities.
       </p>
-      <img
-        src="https://i.imgur.com/Ih0mbYx.png"
-        alt="Opportunity Hack logo"
-        className="image"
-        width={400}        
-      />
+      <picture>
+        <source 
+          media="(max-width: 768px)"
+          srcSet="https://i.imgur.com/Ih0mbYx.png?w=400&q=80"
+          type="image/webp"
+        />
+        <source 
+          media="(min-width: 769px)"
+          srcSet="https://i.imgur.com/Ih0mbYx.png?w=800&q=90"
+          type="image/webp"
+        />
+        <source 
+          media="(max-width: 768px)"
+          srcSet="https://i.imgur.com/Ih0mbYx.png?w=400&q=80"
+          type="image/png"
+        />
+        <source 
+          media="(min-width: 769px)"
+          srcSet="https://i.imgur.com/Ih0mbYx.png?w=800&q=90"
+          type="image/png"
+        />
+        <img
+          src="https://i.imgur.com/Ih0mbYx.png"
+          alt="Opportunity Hack logo"
+          className="image"
+          width={400}
+          height={200}
+          style={{
+            ...styles.image,
+            maxWidth: '100%',
+            height: 'auto',
+            width: 'auto',
+            aspectRatio: '2/1'
+          }}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
       <p className="paragraph" style={styles.paragraph}>
         Equestrian Volunteer Scheduler is one of the projects that was developed
         by a team of <a target='_blank' rel='noreferrer'  href="https://ohack.dev/nonprofit/89076bcc077811edbfdeb29c4ac23549">Opportunity Hack volunteers during the 2020 Opportunity
@@ -159,7 +192,7 @@ function Home() {
         such as phone calls, emails, spreadsheets, and paper forms .
       </p>
       <p className="paragraph" style={styles.paragraph}>
-        <h2>Equestrian Volunteer Scheduler: A Software Solution for The Barn’s Volunteer Program</h2>
+        <h2>Equestrian Volunteer Scheduler: A Software Solution for The Barn's Volunteer Program</h2>
         The team's solution was to create Equestrian Volunteer Scheduler, a
         software application that allows volunteers to create their own
         profiles, view their schedules, sign up for open shifts, receive
