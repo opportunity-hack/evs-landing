@@ -99,6 +99,17 @@ function Home() {
           name="description"
           content="Equestrian Volunteer Scheduler is a software application built for The Barn at Tumbling T Ranch by Opportunity Hack."
         />
+        {/* Resource hints for CDN */}
+        <link rel="preconnect" href="https://cdn.ohack.dev" />
+        <link rel="dns-prefetch" href="https://cdn.ohack.dev" />
+        {/* Preload the image with high priority */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.ohack.dev/ohack.dev/ohack_dark_blue.webp"
+          type="image/webp"
+          fetchpriority="high"
+        />
       </Helmet>
       
       {/* Add some paragraphs with information about Opportunity Hack and the application */}
@@ -110,10 +121,22 @@ function Home() {
         solutions that address their challenges and opportunities.
       </p>
       <img
-        src="https://i.imgur.com/Ih0mbYx.png"
+        src="https://cdn.ohack.dev/ohack.dev/ohack_dark_blue.webp"
         alt="Opportunity Hack logo"
         className="image"
-        width={400}        
+        width={400}
+        height={200}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+          '@media (max-width: 768px)': {
+            width: '150px',
+            height: 'auto'
+          }
+        }}
       />
       <p className="paragraph" style={styles.paragraph}>
         Equestrian Volunteer Scheduler is one of the projects that was developed
@@ -159,7 +182,7 @@ function Home() {
         such as phone calls, emails, spreadsheets, and paper forms .
       </p>
       <p className="paragraph" style={styles.paragraph}>
-        <h2>Equestrian Volunteer Scheduler: A Software Solution for The Barn’s Volunteer Program</h2>
+        <h2>Equestrian Volunteer Scheduler: A Software Solution for The Barn's Volunteer Program</h2>
         The team's solution was to create Equestrian Volunteer Scheduler, a
         software application that allows volunteers to create their own
         profiles, view their schedules, sign up for open shifts, receive
